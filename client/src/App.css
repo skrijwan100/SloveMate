@@ -1,9 +1,125 @@
-
-.bor{
+body{
+  background-color: #000;
+  background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  /* Adjust the grid size */
+  color: white;
+  /* Ensure text is visible */
+  font-family: 'Poppins', sans-serif;
+}
+.bor {
   border: 1px solid #000;
 }
-.centerItem{
+
+.centerItem {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* .backgroundNew {
+  background-color: #000;
+  background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+
+  color: white;
+
+  font-family: 'Poppins', sans-serif;
+} */
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #202124;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e8eaed14;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #00c6ff, #7f00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.neon-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #00e6ff;
+  /* Neon Cyan Text */
+  background: transparent;
+  border: 2px solid #00e6ff;
+  border-radius: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 8px #00e6ff;
+}
+
+.neon-button:hover {
+  background: #00e6ff;
+  color: #000002;
+  box-shadow: 0 0 10px #00e6ff, 0 0 3px #00e6ff;
+}
+
+.gradient-btn {
+  background: linear-gradient(to right, #0088cc, #6a00f4);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.gradient-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.demo-btn {
+  background: #0a0f1a; /* Dark background */
+  color: white;
+  border: 2px solid #0088cc; /* Border color */
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+
+.demo-btn:hover {
+  background: #101826; /* Slightly lighter on hover */
+  box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
+  transform: scale(1.05);
 }

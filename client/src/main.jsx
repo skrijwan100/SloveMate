@@ -7,6 +7,10 @@ import Login from './pages/Login.jsx'
 import Signup from './pages/Signup.jsx'
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
 import FullBlur from './component/FullBlur.jsx'
+import About from './pages/About.jsx'
+import Quiz from './pages/Quiz.jsx'
+import ProblemSolver from './pages/ProblemSolver.jsx'
+import UserContextProvider from './contexts/showUser.context.jsx'
 
 const router = createBrowserRouter([
   {
@@ -16,23 +20,42 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: (
-          <Home/>
+          <Home />
         )
       },
       {
         path: '/login',
         element: (
           <FullBlur>
-              <Login />
+
+          <Login />
           </FullBlur>
         )
       },
       {
-        path: '/singup',
+        path: '/signup',
         element: (
           <FullBlur>
-              <Signup />
+            <Signup />
           </FullBlur>
+        )
+      },
+      {
+        path: '/about',
+        element: (
+          <About />
+        )
+      },
+      {
+        path: '/quiz',
+        element: (
+          <Quiz />
+        )
+      },
+      {
+        path: '/problemsolving',
+        element: (
+          <ProblemSolver />
         )
       }
     ]
@@ -41,6 +64,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <UserContextProvider>
     <RouterProvider router={router} />
+    </UserContextProvider>
   </StrictMode>
 )

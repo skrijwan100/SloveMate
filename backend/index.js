@@ -14,6 +14,7 @@ app.use(express.json());
 
 
 app.use("/api/v1/auth",require("./routes/userauth"));
+app.use("/api/v2/aiwork",require("./routes/aiwork"));
 
 app.get("/",(req,res)=>{
     return res.status(200).json({"run":"Your code is running"});
