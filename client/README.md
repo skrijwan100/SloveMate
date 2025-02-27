@@ -1,8 +1,8 @@
-# React + Vite
+### 📚 SolveMate – Your Personal Study Companion 🚀
+## SolveMate is an AI-powered study assistant that helps students clear doubts, generate quizzes, and create personalized reading schedules. Whether you need quick answers, interactive learning, or a structured study plan, SolveMate has got you covered!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔥 Features
+# ✅ AI-Powered Doubt Solver – Get instant answers with text & voice input.
+# ✅ Smart Quiz Generator – Create quizzes on any topic using AI.
+# ✅ Personalized Study Scheduler – AI-powered time management for effective learning.
+# ✅ Multi-Language Support – Understand concepts in your preferred language.
