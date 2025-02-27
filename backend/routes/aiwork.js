@@ -29,4 +29,25 @@ router.post("/addchathistory", fecthuer, async (req, res) => {
 
 
 })
+router.get("/viwehistory", fecthuer, async (req, res) => {
+    try {
+        const user = req.user;
+        const history = await Chathistory.find({ user });
+        return res.status(200).json({ "history": history })
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ "error": "Internal server error" })
+    }
+})
+router.delete("/deletechathistory/:id", fecthuer, async (req, res) => {
+    try {
+        await Chathistory.findByIdAndDelete(req.params.id);
+        return res.status(200).json({ "message": "The chat history is deleted." })
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ "error": "Internal server error" })
+        
+    }
+})
+    
 module.exports = router;
