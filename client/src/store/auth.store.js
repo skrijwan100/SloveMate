@@ -14,17 +14,16 @@ export const useAuthStore = create((set) => ({
     
     fetchAuth: async () => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/auth/signup`, {
-                method: 'POST',
-                credentials: 'include',
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/auth/getuser`, {
+                 method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    "auth-token":localStorage.getItem('auth-token')}
+
             });
             const data = await response.json();
 
-            if (response.ok) {
-                set({ user: data.data, isAuthenticated: true });
-            } else {
-                set({ user: null, isAuthenticated: false });
-            }
+           return data
         } catch (error) {
             set({ user: null, isAuthenticated: false });
             throw error

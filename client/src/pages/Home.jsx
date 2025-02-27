@@ -7,6 +7,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { FaPlayCircle } from "react-icons/fa";
 import { FiFileText } from "react-icons/fi";
 import { TypeAnimation } from 'react-type-animation';
+import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div className='w-full h-screen backgroundNew'>
@@ -40,7 +41,7 @@ const Home = () => {
           {/* <p className="text-xl text-blue-300 mb-6">Next Generation Legal Intelligence</p> */}
           <p className="text-lg mb-8">Stay Alert, Stay Ahead with AI-Powered Legal Intelligence</p>
           <div className="flex justify-center gap-4">
-            <button className="gradient-btn">Launch System <FaArrowRight /></button>
+            <Link to="/problemsolving"><button className="gradient-btn">Slove your doubt<FaArrowRight /></button></Link>
             <button className="demo-btn">Watch Demo <FaPlayCircle /></button>
           </div>
         </div>

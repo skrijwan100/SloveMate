@@ -2,18 +2,6 @@ import React from 'react'
 import ChatContainer from '../component/ChatContainer';
 
 const ProblemSolver = () => {
-    const handleclickai = async() => {
-        const url=`${import.meta.env.VITE_BACKEND_URL}/api/v2/aiwork/userquestion`
-        const response = await fetch(url,{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ question: "what is MERN stack" }),
-        });
-        const data = await response.json();
-        console.log(data)
-    }
   return (
     <>
    {/* <button>this is try button</button>

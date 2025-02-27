@@ -24,9 +24,10 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-  const response=  await signUp(value.userName, value.email, value.fullName, value.password)
+  const response=  await signUp(value.fullName,value.email,value.userName,value.password)
     if(response.auth===true){
-      return navigate('/login')}
+      return navigate('/login')
+    }
   }
 
   return (
