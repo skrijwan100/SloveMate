@@ -11,7 +11,7 @@ const fetchuser = require("../middleware/fecthuser")
 router.post("/signup", [
     body("name", "Enter your name").isLength({ min: 3 }),
     body("email", "Enter a valid email").isEmail(),
-    body("profassion", "Enter your profassion").isLength({ min: 3 }),
+    body("profassion", "Enter your profassion").isLength({ min: 2 }),
     body("password", "Enter your password more then 5 word").isLength({ min: 5 })
 ], async(req, res) => {
     try {
@@ -22,7 +22,7 @@ router.post("/signup", [
         }
         const validemail=  await User.findOne({email})
         if(validemail){
-            return res.status(400).json({"message":"This is alredy have a account.","auth":false})
+            return res.status(400).json({"message":"This email is alredy have a account.","auth":false})
         }
         const salt = await bcrypt.genSalt(14)
         const hashpassword = await bcrypt.hash(password, salt)
