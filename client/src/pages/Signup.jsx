@@ -24,9 +24,10 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-  const response=  await signUp(value.userName, value.email, value.fullName, value.password)
+  const response=  await signUp(value.fullName,value.email,value.userName,value.password)
     if(response.auth===true){
-      return navigate('/login')}
+      return navigate('/login')
+    }
   }
 
   return (
@@ -40,6 +41,7 @@ const Signup = () => {
           name='fullName'
           value={value.fullName}
           onChange={handleChange}
+          required
         />
         <input
           type="email"
@@ -48,6 +50,7 @@ const Signup = () => {
           name='email'
           value={value.email}
           onChange={handleChange}
+          required
         />
         <input
           type="text"
@@ -56,6 +59,7 @@ const Signup = () => {
           name='userName'
           value={value.userName}
           onChange={handleChange}
+          required
         />
         <input
           type="password"
@@ -64,6 +68,7 @@ const Signup = () => {
           name='password'
           value={value.password}
           onChange={handleChange}
+          required
         />
         <button type='submit' className='bg-[#0891B2] w-full h-10 mt-4 rounded-md text-white'>{isLoading ? "Loading.." : "Signup"}</button>
       </form>

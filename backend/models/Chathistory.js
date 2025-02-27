@@ -14,7 +14,7 @@ const chathistory = new Schema({
         type:Date,
         default:Date.now
     },
-    repoonce:{
+    response:{
         type:String,
         require:true
     }
