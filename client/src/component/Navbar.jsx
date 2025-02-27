@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import logo from '../assets/logo.jpeg'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Navbar = () => {
     const [mediaNav, setMediaNav] = useState(false)
@@ -38,16 +38,16 @@ const Navbar = () => {
                     <div className={`items-center justify-between ${mediaNav ? `` : `hidden`} w-full md:flex md:w-auto md:order-1`} id="navbar-user">
                         <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-gray-800 md:bg-gray-900 border-gray-700">
                             <li>
-                                <Link to="/" className="block py-2 px-3 text-white rounded-sm md:bg-transparent md:p-0 md:text-blue-500" aria-current="page">Home</Link>
+                                <NavLink to="/" className="block py-2 px-3 text-white rounded-sm md:bg-transparent md:p-0" >Home</NavLink>
                             </li>
                             <li>
-                                <Link to="/about" className="block py-2 px-3 rounded-sm md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 :hover:text-white md:hover:bg-transparent border-gray-700">About</Link>
+                                <NavLink to="/about" className="block py-2 px-3 rounded-sm md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 :hover:text-white md:hover:bg-transparent border-gray-700">About</NavLink>
                             </li>
                             <li>
-                                <Link to="/quiz" className="block py-2 px-3 rounded-sm md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 :hover:text-white md:hover:bg-transparent border-gray-700">Quiz</Link>
+                                <NavLink to="/quiz" className="block py-2 px-3 rounded-sm md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 :hover:text-white md:hover:bg-transparent border-gray-700">Quiz</NavLink>
                             </li>
                             <li>
-                                <Link to="/problemsolving" className="block py-2 px-3 rounded-sm md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 :hover:text-white md:hover:bg-transparent border-gray-700">Problem Solver</Link>
+                                <NavLink to="/problemsolving" className="block py-2 px-3 rounded-sm md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 :hover:text-white md:hover:bg-transparent border-gray-700">Problem Solver</NavLink>
                             </li>
                         </ul>
                     </div>

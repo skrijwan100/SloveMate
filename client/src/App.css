@@ -10,7 +10,7 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 .bor {
-  border: 1px solid #000;
+  border: 1px solid #fff;
 }
 
 .centerItem {
@@ -122,4 +122,8 @@ body{
   background: #101826; /* Slightly lighter on hover */
   box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
   transform: scale(1.05);
+}
+
+[aria-current="page"]{
+  color: oklch(0.623 0.214 259.815)
 }
