@@ -7,7 +7,6 @@ import Login from './pages/Login.jsx'
 import Signup from './pages/Signup.jsx'
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
 import FullBlur from './component/FullBlur.jsx'
-import About from './pages/About.jsx'
 import Quiz from './pages/Quiz.jsx'
 import ProblemSolver from './pages/ProblemSolver.jsx'
 import UserContextProvider from './contexts/showUser.context.jsx'
@@ -38,12 +37,6 @@ const router = createBrowserRouter([
           <FullBlur>
             <Signup />
           </FullBlur>
-        )
-      },
-      {
-        path: '/about',
-        element: (
-          <About />
         )
       },
       {
