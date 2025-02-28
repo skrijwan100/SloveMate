@@ -5,7 +5,7 @@ const server= require("./db")
 server();
 require('dotenv').config();
 const corsOptions = {
-  origin: 'https://slove-mate.vercel.app', // Allow only your frontend
+  origin: process.env.FRONTEND_URL, // Allow only your frontend
   methods: ['GET', 'POST', 'DELETE'], // Ensure methods are in an array
   allowedHeaders: ['Content-Type', 'Authorization', 'auth-token'],
   credentials: true, // Allow cookies/auth headers
