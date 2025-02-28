@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
-const mongoURI="mongodb://localhost:27017/SolvMate"
-// const mongoURI="mongodb+srv://rijwansk329:SKRIJWAN%402006@clusterdb.7cmvf.mongodb.net/SolveMate"
+// const mongoURI="mongodb://localhost:27017/SolvMate"
+const mongoURI="mongodb+srv://rijwansk329:SKRIJWAN%402006@clusterdb.7cmvf.mongodb.net/SolveMate"
 
 connectserver=async ()=>{
     try{
