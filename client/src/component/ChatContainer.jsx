@@ -64,8 +64,8 @@ const ChatContainer = () => {
         }
     };
     return (
-        <div className='flex flex-wrap w-full h-full relative'>
-            <div className="inputBox px-4 flex items-center justify-center fixed left-1/2 transform -translate-x-1/2 w-[70%] h-[15%] my-auto top-22 rounded-2xl bg-gray-900">
+        <div className='flex flex-col pt-14 items-center justify-center p-2 w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+            <div className="inputBox px-4 flex items-center justify-center w-[90%] lg:w-[70%] h-[15%] mb-2 rounded-2xl bg-gray-900">
                 <div onClick={()=>setShowLan((v) => !v)} className='h-[3rem] w-[3rem] rounded-full bg-gray-600 flex items-center justify-center cursor-pointer'>
                     <IoLanguageOutline />
                 </div>
@@ -83,7 +83,7 @@ const ChatContainer = () => {
                 <button onClick={()=>setCheckLan("bhojpuri")} className='px-4 py-2 bg-gray-600 text-black rounded-3xl cursor-pointer hover:bg-gray-400'>Bhojpuri</button>
             </div>}
 
-            <div className="inputBox p-4 flex flex-col items-center justify-center fixed left-1/2 transform -translate-x-1/2 w-[70%] h-[65%] my-auto bottom-6 rounded-2xl bg-gray-900 overflow-auto">
+            <div className="inputBox p-4 flex flex-col items-center justify-center w-[90%] lg:w-[70%] h-[75%] bottom-6 rounded-2xl bg-gray-900 overflow-auto">
             {loder?<img src={loderres} alt="loder" className='w-20 h-20'/>:<div className='w-full h-full'><ReactMarkdown>{Array.isArray(resData) ? resData.join("\n") :resData }</ReactMarkdown><div>{Usebtn?<div className='flex gap-x-[11px] py-[9px]' ><div onClick={savefile}><IoMdDownload /></div><div onClick={spaketheresponce}><PiSpeakerHighFill/></div></div>:""}</div></div>}
             
             </div>
