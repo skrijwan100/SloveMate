@@ -1,9 +1,10 @@
+require('dotenv').config();
 const express= require("express")
 const app = express()
 const cors= require("cors")
 const server= require("./db")
 server();
-require('dotenv').config();
+
 const corsOptions = {
   origin: process.env.FRONTEND_URL, // Allow only your frontend
   methods: ['GET', 'POST', 'DELETE'], // Ensure methods are in an array
