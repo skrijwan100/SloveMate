@@ -11,7 +11,10 @@ const corsOptions = {
   credentials: true, // Allow cookies/auth headers
   optionsSuccessStatus: 200 // Fixes some browser CORS issues
 };
+
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
+
 app.use(express.json());
 
 
