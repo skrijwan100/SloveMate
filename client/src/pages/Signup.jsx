@@ -70,7 +70,7 @@ const Signup = () => {
           onChange={handleChange}
           required
         />
-        <button type='submit' className='bg-[#0891B2] w-full h-10 mt-4 rounded-md text-white'>{isLoading ? "Loading.." : "Signup"}</button>
+        <button type='submit' className='bg-[#0891B2] w-full h-10 mt-4 rounded-md text-white cursor-pointer'>{isLoading ? "Loading.." : "Signup"}</button>
       </form>
     </>
   )

@@ -37,7 +37,7 @@ const Navbar = () => {
                     <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                         {localStorage.getItem("auth-token") ?<button onClick={() => setShowUser((e) => !e)} type="button" className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                             <span className="sr-only">Open user menu</span>
-                            <img onClick={getuser} src={user} alt="" className='w-[40px]'/>
+                            <img onClick={getuser} src={user} alt="" className='w-[40px] cursor-pointer'/>
                         </button> :
                         <div>
                             <Link to="/login" className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 cursor-pointer">Login</Link>
@@ -79,7 +79,7 @@ const Navbar = () => {
                         <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white">Settings</a>
                     </li>
                     <li>
-                        <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white">Earnings</a>
+                        <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white">History</a>
                     </li>
                     <li>
                         <div onClick={hnadlelogout} className="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white">Sign out</div>
