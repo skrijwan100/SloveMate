@@ -14,7 +14,7 @@ const Home = () => {
       <section className="flex items-center justify-center min-h-screen">
         <div className="text-center flex flex-col items-center">
           <div className="mb-6 h-26 w-26 centerItem">
-            <img src={logo} alt="" className='h-full w-full object-cover rounded-full' />
+            <img src={logo} alt="" className='h-full w-full object-cover rounded-full cursor-pointer' />
           </div>
           <div className="flex justify-center flex-wrap space-x-4 mb-6">
             <div className="flex items-center justify-center space-x-2 neon-button bg-opacity-50 px-4 py-2 rounded-full">

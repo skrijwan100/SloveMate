@@ -84,7 +84,7 @@ const ChatContainer = () => {
             </div>}
 
             <div className="inputBox p-4 flex flex-col items-center justify-center w-[90%] lg:w-[70%] h-[75%] bottom-6 rounded-2xl bg-gray-900 overflow-auto">
-            {loder?<img src={loderres} alt="loder" className='w-20 h-20'/>:<div className='w-full h-full'><ReactMarkdown>{Array.isArray(resData) ? resData.join("\n") :resData }</ReactMarkdown><div>{Usebtn?<div className='flex gap-x-[11px] py-[9px]' ><div onClick={savefile}><IoMdDownload /></div><div onClick={spaketheresponce}><PiSpeakerHighFill/></div></div>:""}</div></div>}
+            {loder?<img src={loderres} alt="loder" className='w-20 h-20'/>:<div className='w-full h-full'><ReactMarkdown>{Array.isArray(resData) ? resData.join("\n") :resData }</ReactMarkdown><div>{Usebtn?<div className='flex gap-x-[11px] py-[9px]' ><div onClick={savefile}><IoMdDownload className='h-[30px]' /></div><div onClick={spaketheresponce}><PiSpeakerHighFill/></div></div>:""}</div></div>}
             
             </div>
             <div>
