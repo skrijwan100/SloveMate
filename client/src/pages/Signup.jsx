@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom'
 import { useAuthStore } from '../store/auth.store.js'
 import { useNavigate } from 'react-router-dom'
 import { MdClose } from "react-icons/md";
+import { handleError, handleSuccess } from '../component/ErrorMessage.jsx';
 
 const Signup = () => {
   const [value, setValue] = useState({
     fullName: '',
     userName: '',
     email: '',
-    password: ''
+    password: '',
+    renterpassword: ''
   })
   const { signUp, isLoading } = useAuthStore()
   const navigate = useNavigate()
@@ -24,8 +26,11 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-  const response=  await signUp(value.fullName,value.email,value.userName,value.password)
-    if(response.auth===true){
+    if (value.password !== value.renterpassword) {
+      return handleError("Password does not match")
+    }
+    const response = await signUp(value.fullName, value.email, value.userName, value.password)
+    if (response.auth === true) {
       return navigate('/login')
     }
   }
@@ -69,6 +74,17 @@ const Signup = () => {
           value={value.password}
           onChange={handleChange}
           required
+          minLength='6'
+        />
+        <input
+          type="password"
+          className='bg-[#374151] outline-none text-white px-2 border border-gray-700 w-full h-10 mt-4 rounded-md'
+          placeholder='Conform Password'
+          name='renterpassword'
+          value={value.renterpassword}
+          onChange={handleChange}
+          required
+         
         />
         <button type='submit' className='bg-[#0891B2] w-full h-10 mt-4 rounded-md text-white cursor-pointer'>{isLoading ? "Loading.." : "Signup"}</button>
       </form>
