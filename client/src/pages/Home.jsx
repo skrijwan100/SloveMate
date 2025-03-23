@@ -8,6 +8,7 @@ import { FaPlayCircle } from "react-icons/fa";
 import { FiFileText } from "react-icons/fi";
 import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-router-dom';
+
 const Home = () => {
   return (
     <div className='w-full h-screen backgroundNew'>

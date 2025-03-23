@@ -5,7 +5,10 @@ import ReactMarkdown from "react-markdown";
 import { saveAs } from 'file-saver';
 import { IoMdDownload } from "react-icons/io";
 import { PiSpeakerHighFill } from "react-icons/pi";
+import { FaVolumeMute } from "react-icons/fa";
 import Speech from 'react-speech';
+import { handleError } from '../component/ErrorMessage.jsx';
+import { useNavigate } from 'react-router';
 
 const ChatContainer = () => {
     const [loder, setLoder] = useState(false)
@@ -14,7 +17,15 @@ const ChatContainer = () => {
     const [checkLan, setCheckLan] = useState("")
     const [resData, setResData] = useState([])
     const [Usebtn, setUsebtn] = useState(false)
-
+    const [mutebtn,setMutebtn]= useState(false)
+    const naviget=useNavigate()
+    useEffect(()=>{
+        const token=localStorage.getItem("auth-token");
+        if(!token){
+            handleError("Login frist")
+            naviget('login')
+        }
+    },[])
         const handleclickai = async() => {
             setLoder(true)
             const url=`${import.meta.env.VITE_BACKEND_URL}/api/v2/aiwork/userquestion`
@@ -46,8 +57,14 @@ const ChatContainer = () => {
             console.log(data1)
         }
     const spaketheresponce = () => {
-      
+        setMutebtn(true) 
         speakText(resData);
+    }
+    const stopspake=()=>{
+        if ('speechSynthesis' in window) {
+            speechSynthesis.cancel();
+        }
+        setMutebtn(false)
     }
     const savefile = () => {
         // const blob = new Blob([Array.isArray(resData) ? resData.join("\n") : resData], { type: 'text/plain;charset=utf-8' });
@@ -80,11 +97,12 @@ const ChatContainer = () => {
             {showLan && <div className="lan flex flex-col gap-2 fixed top-22 left-24">
                 <button onClick={()=>setCheckLan("english")} className='px-4 py-2 bg-gray-600 text-black rounded-3xl cursor-pointer hover:bg-gray-400'>English</button>
                 <button onClick={()=>setCheckLan("hindi")} className='px-4 py-2 bg-gray-600 text-black rounded-3xl cursor-pointer hover:bg-gray-400 '>Hindi</button>
+                <button onClick={()=>setCheckLan("bengali")} className='px-4 py-2 bg-gray-600 text-black rounded-3xl cursor-pointer hover:bg-gray-400 '>Bengali</button>
                 <button onClick={()=>setCheckLan("bhojpuri")} className='px-4 py-2 bg-gray-600 text-black rounded-3xl cursor-pointer hover:bg-gray-400'>Bhojpuri</button>
             </div>}
 
             <div className="inputBox p-4 flex flex-col items-center justify-center w-[90%] lg:w-[70%] h-[75%] bottom-6 rounded-2xl bg-gray-900 overflow-auto">
-            {loder?<img src={loderres} alt="loder" className='w-20 h-20'/>:<div className='w-full h-full'><ReactMarkdown>{Array.isArray(resData) ? resData.join("\n") :resData }</ReactMarkdown><div>{Usebtn?<div className='flex gap-x-[11px] py-[9px]' ><div onClick={savefile}><IoMdDownload className='h-[30px]' /></div><div onClick={spaketheresponce}><PiSpeakerHighFill/></div></div>:""}</div></div>}
+            {loder?<img src={loderres} alt="loder" className='w-20 h-20'/>:<div className='w-full h-full'><ReactMarkdown>{Array.isArray(resData) ? resData.join("\n") :resData }</ReactMarkdown><div>{Usebtn?<div className='flex gap-x-[11px] py-[9px]' ><div onClick={savefile}><IoMdDownload className='h-[30px] cursor-pointer' /></div>{mutebtn?<div onClick={stopspake}><FaVolumeMute className='cursor-pointer'/></div>:<div onClick={spaketheresponce}><PiSpeakerHighFill className='cursor-pointer'/></div>}</div>:""}</div></div>}
             
             </div>
             <div>
