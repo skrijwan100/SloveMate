@@ -18,6 +18,8 @@ const chathistory = new Schema({
         type:String,
         require:true
     }
+},{
+    timestamps:true
 })
 
 module.exports=mongoose.model('Chathistory',chathistory);

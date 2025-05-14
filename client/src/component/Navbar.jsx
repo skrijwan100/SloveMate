@@ -79,7 +79,7 @@ const Navbar = () => {
                         <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white">Settings</a>
                     </li>
                     <li>
-                        <a href="#" className="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white">History</a>
+                        <Link to="/history" className="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white">History</Link>
                     </li>
                     <li>
                         <div onClick={hnadlelogout} className="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white">Sign out</div>

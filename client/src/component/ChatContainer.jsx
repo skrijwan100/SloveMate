@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import { IoLanguageOutline, IoSend } from "react-icons/io5";
 import loderres from "../assets/loderres.gif"
-import ReactMarkdown from "react-markdown";
+    import ReactMarkdown from "react-markdown";
 import { saveAs } from 'file-saver';
 import { IoMdDownload } from "react-icons/io";
 import { PiSpeakerHighFill } from "react-icons/pi";
@@ -23,7 +23,7 @@ const ChatContainer = () => {
         const token=localStorage.getItem("auth-token");
         if(!token){
             handleError("Login frist")
-            naviget('login')
+            naviget('/login')
         }
     },[])
         const handleclickai = async() => {

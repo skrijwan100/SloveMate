@@ -10,6 +10,7 @@ import FullBlur from './component/FullBlur.jsx'
 import Quiz from './pages/Quiz.jsx'
 import ProblemSolver from './pages/ProblemSolver.jsx'
 import UserContextProvider from './contexts/showUser.context.jsx'
+import UserHistory from './pages/UserHistory.jsx'
 
 const router = createBrowserRouter([
   {
@@ -50,7 +51,13 @@ const router = createBrowserRouter([
         element: (
           <ProblemSolver />
         )
-      }
+      },
+      {
+        path: '/history',
+        element: (
+          <UserHistory />
+        )
+      },
     ]
   },
 ]);
