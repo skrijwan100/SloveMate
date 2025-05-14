@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuthStore } from '../store/auth.store.js'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import { MdClose } from "react-icons/md";
 import { handleError, handleSuccess } from '../component/ErrorMessage.jsx';
 
