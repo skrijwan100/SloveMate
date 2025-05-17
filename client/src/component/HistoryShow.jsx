@@ -58,7 +58,7 @@ return (
                 {history && history.length > 0 ? (
                     history.map((item, index) => (
                         <div key={index} className='bg-black rounded-lg shadow-md hover:shadow-lg transition-shadow p-4 sm:p-7 border border-gray-700'>
-                            <div className='flex flex-col sm:flex-row justify-between items-start sm:items-center'>
+                            <div className='flex flex-col-reverse sm:flex-row justify-between items-start sm:items-center'>
                                 <div className='space-y-2 w-full'>
                                     <p className='text-base sm:text-lg font-semibold text-white mb-4 sm:mb-8 break-words'>{item.message}</p>
                                     <div className='prose prose-invert max-w-full overflow-x-auto'>
@@ -85,3 +85,4 @@ return (
     </div>
 )
 }
+
