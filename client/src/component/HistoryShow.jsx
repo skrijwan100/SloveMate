@@ -54,11 +54,11 @@ return (
     <div>
         {<div className='w-full min-h-[90vh] px-4 sm:px-6 lg:px-8'>
             <h1 className='text-3xl font-bold text-center text-white mb-8 pt-4'>Your History</h1>
-            <div className='max-w-4xl mx-auto space-y-4'>
+            <div className='max-w-4xl mx-auto space-y-4 flex flex-col-reverse items-center justify-center gap-[10px]'>
                 {history && history.length > 0 ? (
                     history.map((item, index) => (
                         <div key={index} className='bg-black rounded-lg shadow-md hover:shadow-lg transition-shadow p-4 sm:p-7 border border-gray-700'>
-                            <div className='flex flex-col-reverse sm:flex-row justify-between items-start sm:items-center'>
+                            <div className='flex flex-col sm:flex-row justify-between items-start sm:items-center'>
                                 <div className='space-y-2 w-full'>
                                     <p className='text-base sm:text-lg font-semibold text-white mb-4 sm:mb-8 break-words'>{item.message}</p>
                                     <div className='prose prose-invert max-w-full overflow-x-auto'>
