@@ -67,10 +67,35 @@ const ChatContainer = () => {
         setMutebtn(false)
     }
     const savefile = () => {
-        // const blob = new Blob([Array.isArray(resData) ? resData.join("\n") : resData], { type: 'text/plain;charset=utf-8' });
-        const blob = new Blob([resData], { type: 'text/plain;charset=utf-8' });
-        saveAs(blob, 'answer.txt');
-    }
+    // Extract and clean text content
+    const cleanText = Array.isArray(resData) 
+        ? resData.join(" ")
+               .replace(/\*\*/g, "")           // Remove bold markdown
+               .replace(/\*/g, "")             // Remove italic markdown  
+               .replace(/\\n/g, "\n")          // Convert escaped newlines
+               .replace(/\n+/g, "\n")          // Remove multiple newlines
+               .replace(/#+\s*/g, "")          // Remove markdown headers
+               .replace(/`{1,3}[^`]*`{1,3}/g, "") // Remove code blocks
+               .replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1") // Convert links to text only
+               .replace(/>\s*/g, "")           // Remove blockquotes
+               .replace(/-{3,}/g, "")          // Remove horizontal rules
+               .replace(/\s+/g, " ")           // Normalize whitespace
+               .trim()
+        : resData.replace(/\*\*/g, "")
+                 .replace(/\*/g, "")
+                 .replace(/\\n/g, "\n")
+                 .replace(/\n+/g, "\n")
+                 .replace(/#+\s*/g, "")
+                 .replace(/`{1,3}[^`]*`{1,3}/g, "")
+                 .replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1")
+                 .replace(/>\s*/g, "")
+                 .replace(/-{3,}/g, "")
+                 .replace(/\s+/g, " ")
+                 .trim();
+
+    const blob = new Blob([cleanText], { type: 'text/plain;charset=utf-8' });
+    saveAs(blob, 'answer.txt');
+}
     const speakText = (text) => {
         if ('speechSynthesis' in window) {
             const utterance = new SpeechSynthesisUtterance(text);
