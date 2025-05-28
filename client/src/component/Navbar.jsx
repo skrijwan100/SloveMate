@@ -56,9 +56,7 @@ const Navbar = () => {
                             <li>
                                 <NavLink to="/" className="block py-2 px-3 text-white rounded-sm md:bg-transparent md:p-0" >Home</NavLink>
                             </li>
-                            <li>
-                                <NavLink to="/quiz" className="block py-2 px-3 rounded-sm md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 :hover:text-white md:hover:bg-transparent border-gray-700">Quiz</NavLink>
-                            </li>
+                            
                             <li>
                                 <NavLink to="/problemsolving" className="block py-2 px-3 rounded-sm md:p-0 text-white md:hover:text-blue-500 hover:bg-gray-700 :hover:text-white md:hover:bg-transparent border-gray-700">Problem Solver</NavLink>
                             </li>
