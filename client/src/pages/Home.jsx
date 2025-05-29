@@ -26,7 +26,7 @@ const Home = () => {
               <RiScanLine />
               <span className="text-blue-400 hover:text-[#050e1a]">Real-time Output</span>
             </div>
-            <Link to="/quiz">  <div className="flex justify-center items-center space-x-2 neon-button bg-opacity-50 px-4 py-2 rounded-full hover:text-[#050e1a]">
+            <Link to="/problemsolving">  <div className="flex justify-center items-center space-x-2 neon-button bg-opacity-50 px-4 py-2 rounded-full hover:text-[#050e1a]">
               <TiWarningOutline />
               <span className="text-blue-400 hover:text-[#050e1a]">Quiz</span>
             </div></Link>

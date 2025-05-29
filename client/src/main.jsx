@@ -11,7 +11,7 @@ import Quiz from './pages/Quiz.jsx'
 import ProblemSolver from './pages/ProblemSolver.jsx'
 import UserContextProvider from './contexts/showUser.context.jsx'
 import UserHistory from './pages/UserHistory.jsx'
-
+import PromptDataProvider from './contexts/promptDataContext.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -64,8 +64,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <UserContextProvider>
-    <RouterProvider router={router} />
-    </UserContextProvider>
+    <PromptDataProvider>
+      <UserContextProvider>
+        <RouterProvider router={router} />
+      </UserContextProvider>
+    </PromptDataProvider>
   </StrictMode>
 )
