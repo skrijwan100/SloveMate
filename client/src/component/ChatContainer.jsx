@@ -6,7 +6,6 @@ import { saveAs } from 'file-saver';
 import { IoMdDownload } from "react-icons/io";
 import { PiSpeakerHighFill } from "react-icons/pi";
 import { FaVolumeMute } from "react-icons/fa";
-import Speech from 'react-speech';
 import { handleError } from '../component/ErrorMessage.jsx';
 import { useNavigate } from 'react-router';
 import { usePromptData } from '../contexts/promptDataContext.jsx';
