@@ -5,9 +5,9 @@ const mongoURI="mongodb+srv://rijwansk329:SKRIJWAN%402006@clusterdb.7cmvf.mongod
 connectserver=async ()=>{
     try{
         await mongoose.connect(mongoURI)
-        console.log("The server is run.")
+        console.log("The server is run.");
     }catch(error){
-        console.log(error)
+        console.log(error);
     }
 }
 
