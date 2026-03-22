@@ -15,7 +15,7 @@ router.post("/userquestion", async (req, res) => {
 
         // Gemini API request
         const response = await axios.post(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${process.env.GEMINI_API_KEY}`,
             {
                 contents: [
                     { role: "user", parts: [{ text: `Explain the following question step-by-step in a beginner-friendly way with examples if needed: ${question}` }] }

@@ -27,7 +27,7 @@ const Quiz = () => {
     setLoading(true);
     try {
       const genAI = new GoogleGenerativeAI(apiKey);
-      const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+      const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
 
       const promptContent = `
         Generate 10 quiz questions about ${promptData} in JSON format:
