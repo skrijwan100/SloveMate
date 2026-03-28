@@ -6,3 +6,7 @@
 ### ✅ Smart Quiz Generator – Create quizzes on any topic using AI.
 ### ✅ Personalized Study Scheduler – AI-powered time management for effective learning.
 ### ✅ Multi-Language Support – Understand concepts in your preferred language.
+
+
+
+
